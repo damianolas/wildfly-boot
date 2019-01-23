@@ -1,0 +1,15 @@
+[Unit]
+Description=WildFly application server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=centos
+Group=centos
+ExecStart=/opt/wildfly-12.0.0.Final/bin/standalone.sh
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target
